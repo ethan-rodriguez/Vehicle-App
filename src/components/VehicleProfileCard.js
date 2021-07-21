@@ -1,7 +1,6 @@
 import React from 'react'
 
-
-const Login = () => {
+const VehicleProfileCard = () => {
 
 
     return (
@@ -10,5 +9,6 @@ const Login = () => {
         </div>
     )
 
+
 }
-export default Login
+export default VehicleProfileCard
