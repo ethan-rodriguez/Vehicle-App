@@ -5,7 +5,7 @@ const UpdateMaintenance = () => {
 
     return (
         <div>
-
+            <p>This is Update Maintenance</p>
         </div>
     )
 

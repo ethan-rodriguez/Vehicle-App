@@ -1,38 +1,61 @@
-.App {
+.sign-up-form {
+  height: 100%;
+  width: 100%;
+  max-width: 330px;
+  margin: auto;
+  padding: 15px;
+  margin-top: 5%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.account{
+  padding-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar{
+  padding-right: 500px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.contact-form{
+  height: 100%;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 15px;
+  margin-top: 5%;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.garage-div {
+  background-image: url('./components/images/garagepic.jpeg'); 
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 1000px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.create-vehicle {
+  position: relative;
+  left: 30px;
+}
+
+#vehicle-history {
+  position: relative;
+  left: 40%;
+}
+
+#welcome {
+text-align: center;
+}
+
+#vehicle-profile {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  left: 35%;
+  height: 95px;
+  width: 700px;
+  margin-top: -22%;
+  
 }

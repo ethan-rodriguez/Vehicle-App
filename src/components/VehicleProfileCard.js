@@ -5,7 +5,7 @@ const VehicleProfileCard = () => {
 
     return (
         <div>
-
+            <p>This is vehicle profile card</p>
         </div>
     )
 

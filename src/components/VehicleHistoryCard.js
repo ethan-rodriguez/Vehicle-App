@@ -5,7 +5,8 @@ const VehicleHistoryCard = () => {
 
     return (
         <div>
-
+            <p>This is update history card</p>
+            
         </div>
     )
 
