@@ -18,7 +18,7 @@ function App() {
   const [owner, setOwner] = useState({})
   const [garage, setGarage] = useState([])
   const [ownerName, setOwnerName] = useState("")
-
+  const [vehicleId, setVehicleId] = useState(0)
 
     const fetchOwner = () => {
         fetch(`http://localhost:9292/owners/search?q=${ownerName}`)
@@ -43,6 +43,11 @@ function App() {
     }, [ownerName])
 
 
+    // const handleDelete = (vehicleId) => {
+
+    // }
+
+
   return (
       <div>
           <Navbar bg="primary" variant="dark" className = 'navbar'>
@@ -55,9 +60,9 @@ function App() {
               {/* <NavBar /> */}
               <Route exact path="/" component={Signup} />
               <Route exact path="/Login" component={()=><Login ownerName={ownerName} setOwnerName={setOwnerName}/>}/>
-              <Route exact path="/Garage" component={()=><Garage ownerName={ownerName} owner={owner.ownerVechicles} garage={garage}/>}/>
+              <Route exact path="/Garage" component={()=><Garage ownerName={ownerName} owner={owner.ownerVechicles} garage={garage} setGarage={setGarage}/>}/>
               <Route exact path="/UpdateMaintenance" component={UpdateMaintenance} />
-              <Route exact path="/VehicleProfile" component={VehicleProfile} />
+              <Route exact path="/VehicleProfile" component={VehicleProfile}  />
               </Switch>
           </Router>
       </div>
