@@ -1,7 +1,5 @@
 import React from 'react'
-import CreateVehicleProfile from './CreateVehicleProfile'
-import CreateVehicleProfileCard from './CreateVehicleProfileCard'
-import VehicleHistory from './VehicleHistory'
+
 import VehicleProfile from './VehicleProfile'
 
 const Garage = ({ownerName, garage, setGarage}) => {
@@ -13,22 +11,16 @@ const Garage = ({ownerName, garage, setGarage}) => {
     }
 
     return (
-        <div className="garage-div">
+        < div className="garage-div">
             {/* <p>{garage[0] ? garage[0].make : null}</p> */}
             <h1 id='welcome'>{`Welcome to ${ownerName}'s garage`}</h1>
             <br/>
-            <div id='vehicle-history'>
-            </div>
 
             <div className='create-vehicle'>
-                <CreateVehicleProfile />
-                <br>
-                </br>
-                <div>
+                <br/>
                 {generateVehicleProfile()}
-                </div>
-
             </div>
+
         </div>
     )
 

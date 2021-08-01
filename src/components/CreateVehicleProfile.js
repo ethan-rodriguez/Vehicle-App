@@ -1,5 +1,5 @@
 import React from 'react'
-import './NewVehicle.css'
+
 
 const CreateVehicleProfile = () => {
 
