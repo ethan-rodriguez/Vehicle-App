@@ -12,7 +12,7 @@ const Garage = ({ownerName, garage, setGarage, owner, vehicles}) => {
 
     const generateVehicleProfile = () => {
         return garage.map(vehicle => {
-            return <VehicleProfile key={vehicle.id} vehicle={vehicle} setGarage={setGarage} garage={garage}/>
+            return <VehicleProfile  vehicle={vehicle} setGarage={setGarage} garage={garage}/>
         })
     }
 

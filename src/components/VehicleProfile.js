@@ -29,7 +29,7 @@ const VehicleProfile = ({vehicle, setGarage, garage}) => {
     return (
         <div id='vehicle-profile'>
             <h4>Vehicle profile</h4>
-                <p>{vehicle.owner_id}</p>
+                
                 <p>{vehicle.year}</p>
                 <p>{vehicle.make}</p>
                 <p>{vehicle.modle}</p>

@@ -27,16 +27,17 @@ const CreateVehicleProfileCard = ({ownerId, garage, setGarage}) => {
 
     const createVehicle = (e) => {
         e.preventDefault()
-        fetch("http://localhost:9292/vehicles", {
+        let config = {
             method: "POST",
             headers: {
-            "Content-Type": "application/json"
+                "Content-type": "application/json",
+                "Accepts": "application/json"
             },
             body: JSON.stringify(vehicle)
-        })
-        .then(res => res.json())
-        .then(data => setGarage([...garage, data.vehicle]))
-    //       
+        }
+        fetch("http://localhost:9292/vehicles", config)
+            .then(res => res.json())
+            .then(data => setGarage([...garage, data.vehicle]))  
     }
     
     
