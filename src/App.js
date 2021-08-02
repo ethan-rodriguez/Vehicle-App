@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Navbar, Container } from 'react-bootstrap'
 import Login from "./components/Login";
 import Garage from "./components/Garage";
-import CreateVehicleProfile from './components/CreateVehicleProfile';
+import CreateVehicleProfileCard from './components/CreateVehicleProfileCard';
 import UpdateMaintenance from './components/UpdateMaintenance';
 import VehicleProfile from './components/VehicleProfile';
 import Signup from './components/Signup';
@@ -16,6 +16,7 @@ import Signup from './components/Signup';
 function App() {
 
   const [owner, setOwner] = useState({})
+  const [vehicles, setVehicles] = useState([])
   const [garage, setGarage] = useState([])
   const [ownerName, setOwnerName] = useState("")
   const [vehicleId, setVehicleId] = useState(0)
@@ -30,16 +31,16 @@ function App() {
             // .then(data => console.log(data))
     }
 
-    const fetchGarage = () => {
-        fetch(`https://localhost:9292/vehicles`)
+    const fetchVehicles = () => {
+        fetch('http://localhost:9292/vehicles/')
         .then(res => res.json())
         // .then(data => setGarage(data))
-        .then(data=> console.log(data))
+        .then(data=> setVehicles(data.vehicles))
     }
 
     useEffect(() => {
         fetchOwner()
-        fetchGarage()
+        fetchVehicles()
     }, [ownerName])
 
 
@@ -60,7 +61,7 @@ function App() {
               {/* <NavBar /> */}
               <Route exact path="/" component={Signup} />
               <Route exact path="/Login" component={()=><Login ownerName={ownerName} setOwnerName={setOwnerName}/>}/>
-              <Route exact path="/Garage" component={()=><Garage ownerName={ownerName} owner={owner.ownerVechicles} garage={garage} setGarage={setGarage}/>}/>
+              <Route exact path="/Garage" component={()=><Garage vehicles={vehicles} ownerName={ownerName} owner={owner} garage={garage} setGarage={setGarage}/>}/>
               <Route exact path="/UpdateMaintenance" component={UpdateMaintenance} />
               <Route exact path="/VehicleProfile" component={VehicleProfile}  />
               </Switch>

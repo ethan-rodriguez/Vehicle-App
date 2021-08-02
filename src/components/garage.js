@@ -1,8 +1,14 @@
 import React from 'react'
-
+import AllVehicles from './AllVehicles'
+import CreateVehicleProfileCard from './CreateVehicleProfileCard'
 import VehicleProfile from './VehicleProfile'
 
-const Garage = ({ownerName, garage, setGarage}) => {
+const Garage = ({ownerName, garage, setGarage, owner, vehicles}) => {
+
+
+
+
+
 
     const generateVehicleProfile = () => {
         return garage.map(vehicle => {
@@ -12,13 +18,18 @@ const Garage = ({ownerName, garage, setGarage}) => {
 
     return (
         < div className="garage-div">
-            {/* <p>{garage[0] ? garage[0].make : null}</p> */}
             <h1 id='welcome'>{`Welcome to ${ownerName}'s garage`}</h1>
             <br/>
-
+            <div>
+                <CreateVehicleProfileCard ownerId={owner.id} garage={garage} setGarage={setGarage} />
+            </div>
+            
             <div className='create-vehicle'>
                 <br/>
                 {generateVehicleProfile()}
+            </div>
+            <div>
+                <AllVehicles vehicles={vehicles}/>
             </div>
 
         </div>
